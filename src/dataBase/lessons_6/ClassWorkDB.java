@@ -5,6 +5,8 @@ import java.sql.*;
 
 public class ClassWorkDB {
 
+
+
     private final String url = "jdbc:postgresql://localhost/postgres";
     private final String user = "postgres";
     private final String password = "4091986gala";
