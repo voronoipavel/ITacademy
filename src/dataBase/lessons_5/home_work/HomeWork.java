@@ -36,7 +36,8 @@ public class HomeWork {
         homeWork.arrayList2.add(new IDCity("KZ1", "Astana"));
         homeWork.arrayList2.add(new IDCity("KZ2", "Almaty"));
 
-        //homeWork.getInsertDB(homeWork.arrayList1);
+
+        homeWork.getInsertDB(homeWork.arrayList1);
         homeWork.getUpdateDB(homeWork.arrayList2);
         homeWork.getSelectDB();
     }
