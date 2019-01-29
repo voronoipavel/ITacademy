@@ -45,7 +45,7 @@ public class HomeWorkDB {
 
     public boolean register(String login, String password, String email) {
         String SQL =
-                "insert into users (login, password, email, date_register) " +
+                "INSERT INTO users (login, password, email, date_register) " +
                         "values (?, ?, ?, ?)";
         try (Connection conn = connect()) {
             PreparedStatement stmt =
@@ -69,7 +69,7 @@ public class HomeWorkDB {
     public boolean authorize(String login, String password) {
         String SQL =
                 "SELECT count(*) FROM users " +
-                        "where lower(login) = lower(?) and password = ? " +
+                        "WHERE lower(login) = lower(?) and password = ? " +
                         "and blocked != true";
 
         int count = 0;
@@ -112,7 +112,7 @@ public class HomeWorkDB {
 
     public boolean log(int loginId, String status) {
         String SQL =
-                "insert into users_log " +
+                "INSERT INTO users_log " +
                         "(user_id, status) " +
                         "values (?, ?)";
         try (Connection conn = connect()) {
@@ -131,9 +131,9 @@ public class HomeWorkDB {
 
     public int getUserAttempts(String login, int numToBlock) {
         String SQL =
-                "select count(*) from users_log a " +
-                        "join users al on a.user_id = al.id " +
-                        "where al.login = ? and a.status = ? ";
+                "SELECT count(*) from users_log a " +
+                        "JOIN users al on a.user_id = al.id " +
+                        "WHERE al.login = ? and a.status = ? ";
         Integer count = 0;
 
         try (Connection conn = connect()) {
@@ -153,9 +153,9 @@ public class HomeWorkDB {
     }
 
     public boolean block(int loginId, boolean blockStatus) {
-        String SQL = "update users " +
-                "set blocked = ? " +
-                "where id = ?";
+        String SQL = "UPDATE users " +
+                "SET blocked = ? " +
+                "WHERE id = ?";
         try (Connection conn = connect()) {
             PreparedStatement stmt =
                     conn.prepareStatement(SQL);
@@ -175,7 +175,7 @@ public class HomeWorkDB {
 
     public boolean clearLog(int loginId) {
         String SQL =
-                "delete from users_log " +
+                "DELETE FROM users_log " +
                         "where user_id = ? and status = ?";
         try (Connection conn = connect()) {
             PreparedStatement stmt =

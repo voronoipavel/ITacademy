@@ -1,7 +1,5 @@
 package dataBase.lessons_5.home_work;
 
-import dataBase.lessons_5.CityCountyPair;
-
 import java.sql.*;
 import java.util.ArrayList;
 
