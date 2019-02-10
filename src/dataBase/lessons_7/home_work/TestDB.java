@@ -23,8 +23,17 @@ public class TestDB {
     }
 
     public static void main(String[] args) {
-        arrayList.add(new User("pavel", "qwerty"));
-        arrayList.add(new User("pav", "123"));
+
+        TestDB testDB = new TestDB();
+
+        arrayList.add(testDB.getAuthUser("pavel", "qwerty"));
+        arrayList.add(testDB.getAuthUser("pavel", "qwerty"));
+
+        for (User u: arrayList) {
+            System.out.println(u);
+
+        }
+
 
 
     }
