@@ -4,8 +4,7 @@ import java.sql.*;
 
 public class HomeWorkDB {
 
-    private final String url =
-            "jdbc:postgresql://localHost/postgres";
+    private final String url ="jdbc:postgresql://localHost/postgres";
     private final String user = "postgres";
     private final String password = "4091986gala";
 
@@ -37,7 +36,7 @@ public class HomeWorkDB {
                 homeWorkDB.log(loginId, "FAIL");
                 attempts = homeWorkDB.getUserAttempts(myLogin, 3);
                 if (attempts >= 3) {
-                    homeWorkDB.block(loginId, false);
+                    homeWorkDB.block(loginId, true);
                 }
             }
         }
