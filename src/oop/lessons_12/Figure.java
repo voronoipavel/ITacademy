@@ -7,9 +7,6 @@ public abstract class Figure {
     private Color color;
     private boolean visible;
 
-
-
-
     public Figure(LocationOfFigure location, Color color, boolean visible) {
         this.location = location;
         this.color = color;
